@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import {GridListTileBar, ListSubheader}  from "@material-ui/core";
 import Lottie from "react-lottie";
 import educationData from "./assets/book-loading.json";
 import projData from "./assets/developer.json";
@@ -13,7 +13,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap, faLaptopCode, faMedal } from '@fortawesome/free-solid-svg-icons'
+import { faLaptopCode, faMedal } from '@fortawesome/free-solid-svg-icons'
 
 
 // import tileData from './tileData';
@@ -144,6 +144,15 @@ export default function TitlebarGridList() {
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={1} cellHeight={"60vh"}>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+          <ListSubheader component="div"> + </ListSubheader>
+          <GridListTileBar
+            title="+  EDUCATION"
+            actionIcon={
+              <FontAwesomeIcon icon={faLaptopCode}  size="lg"/>
+            }
+          />
+        </GridListTile>
         <GridListTile>
         {tileData.map((tile) => (
         <Card className={classes.root} variant="outlined" key={tile.title}>
@@ -163,16 +172,25 @@ export default function TitlebarGridList() {
           </Card>
         ))}
 
-          <GridListTileBar
+          {/* <GridListTileBar
             style={{'marginTop': '30px'}}
             title="EDUCATION"
             actionIcon={
               <FontAwesomeIcon icon={faGraduationCap}  size="lg"/>
             }
-          />
+          /> */}
         </GridListTile>
 
         <GridListTile>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+          <ListSubheader component="div"> + </ListSubheader>
+          <GridListTileBar
+            title="+  PROFESSIONAL EXPERIENCE"
+            actionIcon={
+              <FontAwesomeIcon icon={faLaptopCode}  size="lg"/>
+            }
+          />
+        </GridListTile>
         {jobData.map((tile) => (
         <Card className={classes.root} variant="outlined" key={tile.title}>
             <CardMedia>
@@ -191,14 +209,23 @@ export default function TitlebarGridList() {
           </Card>
         ))}
 
-          <GridListTileBar
+          {/* <GridListTileBar
             title="PROFESSIONAL EXPERIENCE"
             actionIcon={
               <FontAwesomeIcon icon={faLaptopCode}  size="lg"/>
             }
-          />
+          /> */}
         </GridListTile>
-        <GridListTile>          
+        <GridListTile>  
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+          <ListSubheader component="div"> + </ListSubheader>
+          <GridListTileBar
+            title="+  Certifications"
+            actionIcon={
+              <FontAwesomeIcon icon={faMedal}  size="lg"/>
+            }
+          />
+        </GridListTile>        
         {certificationData.map((tile) => (
         <Card className={classes.root} variant="outlined" key={tile.title}>
             <CardMedia>
@@ -217,12 +244,7 @@ export default function TitlebarGridList() {
           </Card>
         ))}
 
-          <GridListTileBar
-            title="Certifications"
-            actionIcon={
-              <FontAwesomeIcon icon={faMedal}  size="lg"/>
-            }
-          />
+          
         </GridListTile>
       </GridList>
     </div>
