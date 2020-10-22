@@ -1,10 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import headerLogo from './linkedin.jpg';
 import './App.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee, faOilCan } from '@fortawesome/free-solid-svg-icons'
-// import Viewpager from './Viewpager'
 import TitlebarGridList from './TitlebarGridList'
 import { makeStyles } from '@material-ui/core/styles';
 import { Alert, AlertTitle } from '@material-ui/lab';
